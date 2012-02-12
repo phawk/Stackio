@@ -16,7 +16,6 @@
 @property (strong, nonatomic) NSArray *apiResults;
 
 // Methods to implement
-- (IBAction)searchButton:(id)sender;
 - (void)getQuestionsTable;
 
 @end

@@ -65,10 +65,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)searchButton:(id)sender {
-    [self getQuestionsTable];
-}
-
 - (void)fetchedData:(NSData *)responseData {
     //parse out the json data
     NSError* error;
@@ -125,14 +121,19 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    
+    // Once the user has entered their query, do the API call and segue
+    [self getQuestionsTable];
+    
     return YES;
 }
 
+/*
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    // Once the user has entered their query, do the API call and segue
-    [self getQuestionsTable];
+    
 }
+*/
 
 - (void)getQuestionsTable
 {
