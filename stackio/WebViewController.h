@@ -14,4 +14,9 @@
 @property (nonatomic, strong) NSString *webUrlToVisit;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 
+// Actions
+- (IBAction)backButton:(id)sender;
+- (IBAction)forwardButton:(id)sender;
+- (IBAction)reloadButton:(id)sender;
+
 @end

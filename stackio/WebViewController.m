@@ -57,6 +57,7 @@
     // Lets tell the web view to go to url
     NSURL *url = [NSURL URLWithString:urlToVisit]; 
     NSURLRequest *req = [NSURLRequest requestWithURL:url]; 
+    
     [self.webView loadRequest:req];
 }
 
@@ -72,6 +73,22 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+- (IBAction)backButton:(id)sender
+{
+    [self.webView goBack];
+}
+
+- (IBAction)forwardButton:(id)sender
+{
+    [self.webView goForward];
+}
+
+- (IBAction)reloadButton:(id)sender
+{
+    [self.webView reload];
 }
 
 @end
