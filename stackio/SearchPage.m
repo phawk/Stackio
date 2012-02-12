@@ -50,6 +50,12 @@
     [self.searchQuery setBorderStyle:UITextBorderStyleRoundedRect];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Open the keyboard on view appearing.
+    [self.searchQuery becomeFirstResponder];
+}
+
 - (void)viewDidUnload
 {
     [self setSearchQuery:nil];
