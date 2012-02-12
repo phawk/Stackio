@@ -39,13 +39,14 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Set ourselves as a delegate of the web view
+    self.webView.delegate = self;
 }
-*/
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -75,7 +76,29 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma Web View Events
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    // report the error inside the webview
+	NSString* errorString = [NSString stringWithFormat:
+							 @"<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><style>body{ color: #e7e7e7; background: #121212; font-family: Helvetica, sans-serif; text-align: center; } h1{ color: #b9000e; font-size: 32px; margin: 30px auto; } .error{ margin:20px; padding:20px; background: #333; border: 1px solid #000; }</style></head><body><div class=\"error\"><h1>oh dear!</h1> <p>%@</p></div></body></html>",
+							 error.localizedDescription];
+	[self.webView loadHTMLString:errorString baseURL:nil];
+}
+
+#pragma Web View Toolbar buttons
 - (IBAction)backButton:(id)sender
 {
     [self.webView goBack];

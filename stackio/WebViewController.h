@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController
+@interface WebViewController : UIViewController <UIWebViewDelegate>
 
 // Properties to be synthesized
 @property (nonatomic, strong) NSString *webUrlToVisit;

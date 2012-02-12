@@ -81,6 +81,7 @@
 - (void)fetchedData:(NSData *)responseData {
     // Hide activity indicator
     [self.activityIndicator stopAnimating];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
     //parse out the json data
     NSError* error;
@@ -156,8 +157,9 @@
     // Check the textbox is not empty
     if (self.searchQuery.text.length > 0)
     {
-        // Show activity indicator
+        // Show activity indicator and network indicator
         [self.activityIndicator startAnimating];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
         // Get our search query
         NSString *searchQueryText = [URLEncoder urlEncodeString:[self.searchQuery text]];
@@ -184,6 +186,7 @@
                     
                     // Hide activity indicator
                     [self.activityIndicator stopAnimating];
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     
                     // We need to popup an alert to tell the user the interwebs are b0rked
                     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Nightmare." 
