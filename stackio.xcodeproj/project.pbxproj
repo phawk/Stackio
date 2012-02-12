@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C18C323F14E7451B00691394 /* StackTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C323E14E7451B00691394 /* StackTableViewController.m */; };
 		C1B96E8614E730B5003CF665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8514E730B5003CF665 /* UIKit.framework */; };
 		C1B96E8814E730B5003CF665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8714E730B5003CF665 /* Foundation.framework */; };
 		C1B96E8A14E730B5003CF665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8914E730B5003CF665 /* CoreGraphics.framework */; };
@@ -14,23 +15,28 @@
 		C1B96E9214E730B5003CF665 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B96E9114E730B5003CF665 /* main.m */; };
 		C1B96E9614E730B5003CF665 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B96E9514E730B5003CF665 /* AppDelegate.m */; };
 		C1B96E9914E730B5003CF665 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B96E9714E730B5003CF665 /* MainStoryboard.storyboard */; };
-		C1B96E9C14E730B5003CF665 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B96E9B14E730B5003CF665 /* ViewController.m */; };
+		C1B96EA414E7313C003CF665 /* StackNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B96EA314E7313C003CF665 /* StackNavController.m */; };
+		C1B96EA714E7320B003CF665 /* SearchPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B96EA614E7320B003CF665 /* SearchPage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C18C323D14E7451B00691394 /* StackTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackTableViewController.h; sourceTree = "<group>"; };
+		C18C323E14E7451B00691394 /* StackTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackTableViewController.m; sourceTree = "<group>"; };
 		C1B96E8114E730B5003CF665 /* stackio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stackio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B96E8514E730B5003CF665 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C1B96E8714E730B5003CF665 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C1B96E8914E730B5003CF665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C1B96E8D14E730B5003CF665 /* stackio-Info.plist */ = {isa = PBXFileReference; path = "stackio-Info.plist"; sourceTree = "<group>"; };
+		C1B96E8D14E730B5003CF665 /* stackio-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "stackio-Info.plist"; sourceTree = "<group>"; };
 		C1B96E8F14E730B5003CF665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C1B96E9114E730B5003CF665 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C1B96E9314E730B5003CF665 /* stackio-Prefix.pch */ = {isa = PBXFileReference; path = "stackio-Prefix.pch"; sourceTree = "<group>"; };
-		C1B96E9414E730B5003CF665 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		C1B96E9314E730B5003CF665 /* stackio-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "stackio-Prefix.pch"; sourceTree = "<group>"; };
+		C1B96E9414E730B5003CF665 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C1B96E9514E730B5003CF665 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C1B96E9814E730B5003CF665 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C1B96E9A14E730B5003CF665 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
-		C1B96E9B14E730B5003CF665 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C1B96EA214E7313C003CF665 /* StackNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackNavController.h; sourceTree = "<group>"; };
+		C1B96EA314E7313C003CF665 /* StackNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackNavController.m; sourceTree = "<group>"; };
+		C1B96EA514E7320B003CF665 /* SearchPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPage.h; sourceTree = "<group>"; };
+		C1B96EA614E7320B003CF665 /* SearchPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +86,13 @@
 				C1B96E9414E730B5003CF665 /* AppDelegate.h */,
 				C1B96E9514E730B5003CF665 /* AppDelegate.m */,
 				C1B96E9714E730B5003CF665 /* MainStoryboard.storyboard */,
-				C1B96E9A14E730B5003CF665 /* ViewController.h */,
-				C1B96E9B14E730B5003CF665 /* ViewController.m */,
+				C1B96EA514E7320B003CF665 /* SearchPage.h */,
+				C1B96EA614E7320B003CF665 /* SearchPage.m */,
 				C1B96E8C14E730B5003CF665 /* Supporting Files */,
+				C1B96EA214E7313C003CF665 /* StackNavController.h */,
+				C1B96EA314E7313C003CF665 /* StackNavController.m */,
+				C18C323D14E7451B00691394 /* StackTableViewController.h */,
+				C18C323E14E7451B00691394 /* StackTableViewController.m */,
 			);
 			path = stackio;
 			sourceTree = "<group>";
@@ -163,7 +173,9 @@
 			files = (
 				C1B96E9214E730B5003CF665 /* main.m in Sources */,
 				C1B96E9614E730B5003CF665 /* AppDelegate.m in Sources */,
-				C1B96E9C14E730B5003CF665 /* ViewController.m in Sources */,
+				C1B96EA414E7313C003CF665 /* StackNavController.m in Sources */,
+				C1B96EA714E7320B003CF665 /* SearchPage.m in Sources */,
+				C18C323F14E7451B00691394 /* StackTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +287,7 @@
 				C1B96EA114E730B5003CF665 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

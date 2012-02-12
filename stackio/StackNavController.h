@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  StackNavController.h
 //  stackio
 //
 //  Created by Pete Hawkins on 11/02/2012.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface StackNavController : UINavigationController
 
 @end
