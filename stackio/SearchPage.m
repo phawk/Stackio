@@ -60,18 +60,32 @@
 }
 
 - (IBAction)searchButton:(id)sender {
-    // Get our search query
-    NSString *searchQueryText = [URLEncoder urlEncodeString:[self.searchQuery text]];
     
-    // Build up our url
-    NSURL *endpoint = [NSURL URLWithString: [@"http://api.stackexchange.com/2.0/search?order=desc&sort=activity&site=stackoverflow&intitle=" stringByAppendingString: searchQueryText]];
-    
-    // Do an async call to get the results
-    dispatch_async(kBgQueue, ^{
-        NSData* data = [NSData dataWithContentsOfURL: endpoint];
-        [self performSelectorOnMainThread:@selector(fetchedData:) 
-                               withObject:data waitUntilDone:YES];
-    });
+    if (self.searchQuery.text.length > 0)
+    {
+        // Get our search query
+        NSString *searchQueryText = [URLEncoder urlEncodeString:[self.searchQuery text]];
+        
+        // Build up our url
+        NSURL *endpoint = [NSURL URLWithString: [@"http://api.stackexchange.com/2.0/search?order=desc&sort=activity&site=stackoverflow&intitle=" stringByAppendingString: searchQueryText]];
+        
+        // Do an async call to get the results
+        dispatch_async(kBgQueue, ^{
+            NSData* data = [NSData dataWithContentsOfURL: endpoint];
+            [self performSelectorOnMainThread:@selector(fetchedData:) 
+                                   withObject:data waitUntilDone:YES];
+        });
+    }
+    else
+    {
+        // We need to popup an alert to inform the user to enter a search query
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Nightmare." 
+                                                          message:@"You need to tell me what to search for!" 
+                                                         delegate:nil
+                                                cancelButtonTitle:@"Alright, Gosh!" 
+                                                otherButtonTitles:nil];
+        [message show];
+    }
 }
 
 - (void)fetchedData:(NSData *)responseData {
