@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C103AA7414E812060080A095 /* URLEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C103AA7314E812060080A095 /* URLEncoder.m */; };
+		C103AA7714E814080080A095 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C103AA7614E814080080A095 /* WebViewController.m */; };
 		C18C323F14E7451B00691394 /* StackTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C323E14E7451B00691394 /* StackTableViewController.m */; };
 		C1B96E8614E730B5003CF665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8514E730B5003CF665 /* UIKit.framework */; };
 		C1B96E8814E730B5003CF665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8714E730B5003CF665 /* Foundation.framework */; };
@@ -20,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C103AA7214E812060080A095 /* URLEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLEncoder.h; sourceTree = "<group>"; };
+		C103AA7314E812060080A095 /* URLEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLEncoder.m; sourceTree = "<group>"; };
+		C103AA7514E814080080A095 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		C103AA7614E814080080A095 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		C18C323D14E7451B00691394 /* StackTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackTableViewController.h; sourceTree = "<group>"; };
 		C18C323E14E7451B00691394 /* StackTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackTableViewController.m; sourceTree = "<group>"; };
 		C1B96E8114E730B5003CF665 /* stackio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stackio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C103AA7014E811E40080A095 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				C103AA7214E812060080A095 /* URLEncoder.h */,
+				C103AA7314E812060080A095 /* URLEncoder.m */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
 		C1B96E7614E730B5003CF665 = {
 			isa = PBXGroup;
 			children = (
@@ -83,9 +98,12 @@
 		C1B96E8B14E730B5003CF665 /* stackio */ = {
 			isa = PBXGroup;
 			children = (
+				C103AA7014E811E40080A095 /* libs */,
 				C1B96E9414E730B5003CF665 /* AppDelegate.h */,
 				C1B96E9514E730B5003CF665 /* AppDelegate.m */,
 				C1B96E9714E730B5003CF665 /* MainStoryboard.storyboard */,
+				C103AA7514E814080080A095 /* WebViewController.h */,
+				C103AA7614E814080080A095 /* WebViewController.m */,
 				C1B96EA514E7320B003CF665 /* SearchPage.h */,
 				C1B96EA614E7320B003CF665 /* SearchPage.m */,
 				C1B96E8C14E730B5003CF665 /* Supporting Files */,
@@ -176,6 +194,8 @@
 				C1B96EA414E7313C003CF665 /* StackNavController.m in Sources */,
 				C1B96EA714E7320B003CF665 /* SearchPage.m in Sources */,
 				C18C323F14E7451B00691394 /* StackTableViewController.m in Sources */,
+				C103AA7414E812060080A095 /* URLEncoder.m in Sources */,
+				C103AA7714E814080080A095 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
