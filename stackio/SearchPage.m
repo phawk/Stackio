@@ -39,6 +39,8 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
     // Set self as the delegate for text box
     self.searchQuery.delegate = self;
     
@@ -59,6 +61,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     // Open the keyboard on view appearing.
     [self.searchQuery becomeFirstResponder];
 }
