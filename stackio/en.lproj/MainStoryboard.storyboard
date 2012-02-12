@@ -44,7 +44,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="BAN-bS-9UK"/>
+                    <navigationItem key="navigationItem" title="Search" id="BAN-bS-9UK">
+                        <barButtonItem key="rightBarButtonItem" title="phawk.co.uk" id="FUv-SA-sax">
+                            <connections>
+                                <segue destination="4Sd-km-8g5" kind="push" identifier="visitPhawk" id="V59-tU-GNd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchFormLabel" destination="wb3-So-aQu" id="B5H-47-HWI"/>
                         <outlet property="searchQuery" destination="rLy-y5-6Xp" id="pVV-Jg-IOn"/>
@@ -101,7 +107,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-365" y="-68"/>
+            <point key="canvasLocation" x="-357" y="396"/>
         </scene>
         <scene sceneID="GGM-yK-d3K">
             <objects>
@@ -111,7 +117,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="t9r-nu-ivN">
+                            <webView multipleTouchEnabled="YES" contentMode="scaleToFill" scalesPageToFit="YES" id="t9r-nu-ivN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,7 +125,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EPx-Kr-lry"/>
+                    <navigationItem key="navigationItem" title="Web browser" id="EPx-Kr-lry"/>
+                    <connections>
+                        <outlet property="webView" destination="t9r-nu-ivN" id="uwA-mp-fIn"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="37" y="-68"/>
@@ -159,6 +168,9 @@
         </class>
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -166,4 +178,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="V59-tU-GNd"/>
+    </inferredMetricsTieBreakers>
 </document>

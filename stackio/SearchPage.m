@@ -9,6 +9,7 @@
 #import "SearchPage.h"
 #import "StackTableViewController.h"
 #import "URLEncoder.h"
+#import "WebViewController.h"
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 #define StackExchangeSearchEndpoint [NSURL URLWithString: @"http://api.stackexchange.com/2.0/search?order=desc&sort=activity&intitle=php&site=stackoverflow"]
@@ -92,6 +93,17 @@
         StackTableViewController *newController = segue.destinationViewController;
         
         [newController setQuestions:[self apiResults]];
+    }
+    
+    if ([segue.identifier isEqualToString:@"visitPhawk"])
+    {
+        // It's the right segue lets pass the search query text
+        WebViewController *newController = segue.destinationViewController;
+        
+        // Lets set the pages title to be more relevant
+        newController.title = @"phawk";
+        
+        newController.webUrlToVisit = @"http://phawk.co.uk";
     }
 }
 

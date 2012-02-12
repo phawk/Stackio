@@ -7,6 +7,7 @@
 //
 
 #import "StackTableViewController.h"
+#import "WebViewController.h"
 
 @implementation StackTableViewController
 @synthesize resultsTable = _resultsTable;
@@ -134,13 +135,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    [self performSegueWithIdentifier:@"openWebView" sender:cell];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"openWebView"])
+    {
+        // Get the URL to visit from the cell (sender)
+        UITableViewCell *cell = sender;
+        NSString *url = cell.detailTextLabel.text;
+        
+        // It's the right segue lets pass the search query text
+        WebViewController *newController = segue.destinationViewController;
+        
+        // Lets set the pages title to be more relevant
+        newController.title = cell.textLabel.text;
+        
+        newController.webUrlToVisit = url;
+    }
 }
 
 @end

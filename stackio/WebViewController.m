@@ -10,6 +10,9 @@
 
 @implementation WebViewController
 
+@synthesize webUrlToVisit = _webUrlToVisit;
+@synthesize webView = _webView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -44,8 +47,22 @@
 }
 */
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // Lets tell our web view to load the url we set
+    NSString *urlToVisit = self.webUrlToVisit;
+    
+    // Lets tell the web view to go to url
+    NSURL *url = [NSURL URLWithString:urlToVisit]; 
+    NSURLRequest *req = [NSURLRequest requestWithURL:url]; 
+    [self.webView loadRequest:req];
+}
+
 - (void)viewDidUnload
 {
+    [self setWebView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -10,4 +10,8 @@
 
 @interface WebViewController : UIViewController
 
+// Properties to be synthesized
+@property (nonatomic, strong) NSString *webUrlToVisit;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+
 @end
