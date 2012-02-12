@@ -60,7 +60,7 @@
 }
 
 - (IBAction)searchButton:(id)sender {
-    
+    // Check the textbox is not empty
     if (self.searchQuery.text.length > 0)
     {
         // Get our search query
