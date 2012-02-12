@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface StackTableViewController : UITableViewController
-@property (strong, nonatomic) IBOutlet UITableView *resultsTable;
 
+// Properties to synthesize
+@property (strong, nonatomic) IBOutlet UITableView *resultsTable;
 @property(nonatomic, strong) NSString *searchString;
 @property(nonatomic, strong) NSArray *questions;
 

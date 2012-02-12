@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchPage : UIViewController
+
+// Properties to synthesize
 @property (weak, nonatomic) IBOutlet UITextField *searchQuery;
-- (IBAction)searchButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *searchFormLabel;
 @property (strong, nonatomic) NSArray *apiResults;
 
-- (NSString *)escape:(NSString *)text;
+// Methods to implement
+- (IBAction)searchButton:(id)sender;
 
 @end
