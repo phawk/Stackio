@@ -16,6 +16,7 @@
 @synthesize searchFormLabel = _searchFormLabel;
 @synthesize searchQuery = _searchQuery;
 @synthesize apiResults = _apiResults;
+@synthesize activityIndicator = _activityIndicator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,6 +49,12 @@
     
     // Set text fields border style
     [self.searchQuery setBorderStyle:UITextBorderStyleRoundedRect];
+    
+    // Setup activity indicator to be used on page
+    self.activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.activityIndicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview: self.activityIndicator];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -72,6 +79,9 @@
 }
 
 - (void)fetchedData:(NSData *)responseData {
+    // Hide activity indicator
+    [self.activityIndicator stopAnimating];
+    
     //parse out the json data
     NSError* error;
     NSDictionary* json = [NSJSONSerialization 
@@ -146,6 +156,9 @@
     // Check the textbox is not empty
     if (self.searchQuery.text.length > 0)
     {
+        // Show activity indicator
+        [self.activityIndicator startAnimating];
+        
         // Get our search query
         NSString *searchQueryText = [URLEncoder urlEncodeString:[self.searchQuery text]];
         
@@ -168,6 +181,10 @@
             else
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    // Hide activity indicator
+                    [self.activityIndicator stopAnimating];
+                    
                     // We need to popup an alert to tell the user the interwebs are b0rked
                     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Nightmare." 
                                                                       message:@"There seems to have been a problem with the interwebs" 

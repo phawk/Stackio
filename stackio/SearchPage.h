@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *searchQuery;
 @property (weak, nonatomic) IBOutlet UILabel *searchFormLabel;
 @property (strong, nonatomic) NSArray *apiResults;
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
 // Methods to implement
 - (void)getQuestionsTable;

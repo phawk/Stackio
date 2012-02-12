@@ -192,6 +192,7 @@
                 <relationship kind="action" name="tappedAway:"/>
                 <relationship kind="outlet" name="searchFormLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="searchQuery" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="view" candidateClass="UIControl"/>
             </relationships>
         </class>
         <class className="StackNavController" superclassName="UINavigationController">
