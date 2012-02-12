@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		C103AA7414E812060080A095 /* URLEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C103AA7314E812060080A095 /* URLEncoder.m */; };
 		C103AA7714E814080080A095 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C103AA7614E814080080A095 /* WebViewController.m */; };
+		C103AA8114E837D60080A095 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AA7A14E837D60080A095 /* icon57.png */; };
+		C103AA8214E837D60080A095 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AA7B14E837D60080A095 /* icon72.png */; };
+		C103AA8314E837D60080A095 /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AA7C14E837D60080A095 /* icon114.png */; };
+		C103AA8414E837D60080A095 /* mainbg.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AA7D14E837D60080A095 /* mainbg.png */; };
+		C103AA8514E837D60080A095 /* mainbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AA7E14E837D60080A095 /* mainbg@2x.png */; };
+		C103AA8614E837D60080A095 /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AA7F14E837D60080A095 /* navbar.png */; };
+		C103AA8714E837D60080A095 /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AA8014E837D60080A095 /* navbar@2x.png */; };
+		C103AAA414E83FAE0080A095 /* backArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA014E83FAE0080A095 /* backArrow.png */; };
+		C103AAA514E83FAE0080A095 /* backArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA114E83FAE0080A095 /* backArrow@2x.png */; };
+		C103AAA614E83FAE0080A095 /* forwardArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA214E83FAE0080A095 /* forwardArrow.png */; };
+		C103AAA714E83FAE0080A095 /* forwardArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA314E83FAE0080A095 /* forwardArrow@2x.png */; };
 		C18C323F14E7451B00691394 /* StackTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C323E14E7451B00691394 /* StackTableViewController.m */; };
 		C1B96E8614E730B5003CF665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8514E730B5003CF665 /* UIKit.framework */; };
 		C1B96E8814E730B5003CF665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8714E730B5003CF665 /* Foundation.framework */; };
@@ -26,6 +37,17 @@
 		C103AA7314E812060080A095 /* URLEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLEncoder.m; sourceTree = "<group>"; };
 		C103AA7514E814080080A095 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		C103AA7614E814080080A095 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		C103AA7A14E837D60080A095 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon57.png; path = assets/icon57.png; sourceTree = "<group>"; };
+		C103AA7B14E837D60080A095 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon72.png; path = assets/icon72.png; sourceTree = "<group>"; };
+		C103AA7C14E837D60080A095 /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon114.png; path = assets/icon114.png; sourceTree = "<group>"; };
+		C103AA7D14E837D60080A095 /* mainbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainbg.png; path = assets/mainbg.png; sourceTree = "<group>"; };
+		C103AA7E14E837D60080A095 /* mainbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mainbg@2x.png"; path = "assets/mainbg@2x.png"; sourceTree = "<group>"; };
+		C103AA7F14E837D60080A095 /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navbar.png; path = assets/navbar.png; sourceTree = "<group>"; };
+		C103AA8014E837D60080A095 /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbar@2x.png"; path = "assets/navbar@2x.png"; sourceTree = "<group>"; };
+		C103AAA014E83FAE0080A095 /* backArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backArrow.png; path = assets/backArrow.png; sourceTree = "<group>"; };
+		C103AAA114E83FAE0080A095 /* backArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backArrow@2x.png"; path = "assets/backArrow@2x.png"; sourceTree = "<group>"; };
+		C103AAA214E83FAE0080A095 /* forwardArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forwardArrow.png; path = assets/forwardArrow.png; sourceTree = "<group>"; };
+		C103AAA314E83FAE0080A095 /* forwardArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "forwardArrow@2x.png"; path = "assets/forwardArrow@2x.png"; sourceTree = "<group>"; };
 		C18C323D14E7451B00691394 /* StackTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackTableViewController.h; sourceTree = "<group>"; };
 		C18C323E14E7451B00691394 /* StackTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackTableViewController.m; sourceTree = "<group>"; };
 		C1B96E8114E730B5003CF665 /* stackio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stackio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +90,25 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
+		C103AA7914E837AC0080A095 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C103AAA014E83FAE0080A095 /* backArrow.png */,
+				C103AAA114E83FAE0080A095 /* backArrow@2x.png */,
+				C103AAA214E83FAE0080A095 /* forwardArrow.png */,
+				C103AAA314E83FAE0080A095 /* forwardArrow@2x.png */,
+				C103AA7A14E837D60080A095 /* icon57.png */,
+				C103AA7B14E837D60080A095 /* icon72.png */,
+				C103AA7C14E837D60080A095 /* icon114.png */,
+				C103AA7D14E837D60080A095 /* mainbg.png */,
+				C103AA7E14E837D60080A095 /* mainbg@2x.png */,
+				C103AA7F14E837D60080A095 /* navbar.png */,
+				C103AA8014E837D60080A095 /* navbar@2x.png */,
+			);
+			name = Images;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		C1B96E7614E730B5003CF665 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +139,7 @@
 		C1B96E8B14E730B5003CF665 /* stackio */ = {
 			isa = PBXGroup;
 			children = (
+				C103AA7914E837AC0080A095 /* Images */,
 				C103AA7014E811E40080A095 /* libs */,
 				C1B96E9414E730B5003CF665 /* AppDelegate.h */,
 				C1B96E9514E730B5003CF665 /* AppDelegate.m */,
@@ -179,6 +221,17 @@
 			files = (
 				C1B96E9014E730B5003CF665 /* InfoPlist.strings in Resources */,
 				C1B96E9914E730B5003CF665 /* MainStoryboard.storyboard in Resources */,
+				C103AA8114E837D60080A095 /* icon57.png in Resources */,
+				C103AA8214E837D60080A095 /* icon72.png in Resources */,
+				C103AA8314E837D60080A095 /* icon114.png in Resources */,
+				C103AA8414E837D60080A095 /* mainbg.png in Resources */,
+				C103AA8514E837D60080A095 /* mainbg@2x.png in Resources */,
+				C103AA8614E837D60080A095 /* navbar.png in Resources */,
+				C103AA8714E837D60080A095 /* navbar@2x.png in Resources */,
+				C103AAA414E83FAE0080A095 /* backArrow.png in Resources */,
+				C103AAA514E83FAE0080A095 /* backArrow@2x.png in Resources */,
+				C103AAA614E83FAE0080A095 /* forwardArrow.png in Resources */,
+				C103AAA714E83FAE0080A095 /* forwardArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +325,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "stackio/stackio-Prefix.pch";
 				INFOPLIST_FILE = "stackio/stackio-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -283,6 +337,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "stackio/stackio-Prefix.pch";
 				INFOPLIST_FILE = "stackio/stackio-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
