@@ -38,7 +38,16 @@
 
 - (void)viewDidLoad
 {
+    // Set self as the delegate for text box
     self.searchQuery.delegate = self;
+    
+    // Set navigation bar to use an image
+    UINavigationBar *navBar = [[self navigationController] navigationBar];
+    UIImage *backgroundImage = [UIImage imageNamed:@"navbar.png"];
+    [navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    
+    // Set text fields border style
+    [self.searchQuery setBorderStyle:UITextBorderStyleRoundedRect];
 }
 
 - (void)viewDidUnload
@@ -57,6 +66,76 @@
 }
 
 - (IBAction)searchButton:(id)sender {
+    [self getQuestionsTable];
+}
+
+- (void)fetchedData:(NSData *)responseData {
+    //parse out the json data
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization 
+                          JSONObjectWithData:responseData
+                          options:kNilOptions
+                          error:&error];
+    
+    self.apiResults = [json valueForKey:@"items"];
+    
+    if (self.apiResults.count > 0)
+    {
+        // Segue
+        [self performSegueWithIdentifier:@"goResultsView" sender:self];
+    }
+    else
+    {
+        // No results matched the query
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"No results found" 
+                                                          message:@"Pro Tip: Try making your search less specific" 
+                                                         delegate:nil
+                                                cancelButtonTitle:@"Thanks!"
+                                                otherButtonTitles:nil];
+        [message show];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"goResultsView"])
+    {
+        // It's the right segue lets pass the search query text
+        StackTableViewController *newController = segue.destinationViewController;
+        
+        // Pass the API results to table view
+        [newController setQuestions:[self apiResults]];
+        
+        // Set page title
+        newController.title = self.searchQuery.text;
+    }
+    
+    if ([segue.identifier isEqualToString:@"visitPhawk"])
+    {
+        // It's the right segue lets pass the search query text
+        WebViewController *newController = segue.destinationViewController;
+        
+        // Lets set the pages title to be more relevant
+        newController.title = @"phawk";
+        
+        newController.webUrlToVisit = @"http://phawk.co.uk";
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    // Once the user has entered their query, do the API call and segue
+    [self getQuestionsTable];
+}
+
+- (void)getQuestionsTable
+{
     // Check the textbox is not empty
     if (self.searchQuery.text.length > 0)
     {
@@ -103,62 +182,6 @@
                                                 otherButtonTitles:nil];
         [message show];
     }
-}
-
-- (void)fetchedData:(NSData *)responseData {
-    //parse out the json data
-    NSError* error;
-    NSDictionary* json = [NSJSONSerialization 
-                          JSONObjectWithData:responseData
-                          options:kNilOptions
-                          error:&error];
-    
-    self.apiResults = [json valueForKey:@"items"];
-    
-    if (self.apiResults.count > 0)
-    {
-        // Segue
-        [self performSegueWithIdentifier:@"goResultsView" sender:self];
-    }
-    else
-    {
-        // No results matched the query
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"No results found" 
-                                                          message:@"Pro Tip: Try making your search less specific" 
-                                                         delegate:nil
-                                                cancelButtonTitle:@"Thanks!"
-                                                otherButtonTitles:nil];
-        [message show];
-    }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"goResultsView"])
-    {
-        // It's the right segue lets pass the search query text
-        StackTableViewController *newController = segue.destinationViewController;
-        
-        [newController setQuestions:[self apiResults]];
-    }
-    
-    if ([segue.identifier isEqualToString:@"visitPhawk"])
-    {
-        // It's the right segue lets pass the search query text
-        WebViewController *newController = segue.destinationViewController;
-        
-        // Lets set the pages title to be more relevant
-        newController.title = @"phawk";
-        
-        newController.webUrlToVisit = @"http://phawk.co.uk";
-    }
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    
-    return YES;
 }
 
 @end

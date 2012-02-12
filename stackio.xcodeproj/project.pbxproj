@@ -20,6 +20,8 @@
 		C103AAA514E83FAE0080A095 /* backArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA114E83FAE0080A095 /* backArrow@2x.png */; };
 		C103AAA614E83FAE0080A095 /* forwardArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA214E83FAE0080A095 /* forwardArrow.png */; };
 		C103AAA714E83FAE0080A095 /* forwardArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA314E83FAE0080A095 /* forwardArrow@2x.png */; };
+		C103AAAA14E848070080A095 /* stackExchange.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA814E848070080A095 /* stackExchange.png */; };
+		C103AAAB14E848070080A095 /* stackExchange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA914E848070080A095 /* stackExchange@2x.png */; };
 		C18C323F14E7451B00691394 /* StackTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C323E14E7451B00691394 /* StackTableViewController.m */; };
 		C1B96E8614E730B5003CF665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8514E730B5003CF665 /* UIKit.framework */; };
 		C1B96E8814E730B5003CF665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8714E730B5003CF665 /* Foundation.framework */; };
@@ -48,6 +50,8 @@
 		C103AAA114E83FAE0080A095 /* backArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backArrow@2x.png"; path = "assets/backArrow@2x.png"; sourceTree = "<group>"; };
 		C103AAA214E83FAE0080A095 /* forwardArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forwardArrow.png; path = assets/forwardArrow.png; sourceTree = "<group>"; };
 		C103AAA314E83FAE0080A095 /* forwardArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "forwardArrow@2x.png"; path = "assets/forwardArrow@2x.png"; sourceTree = "<group>"; };
+		C103AAA814E848070080A095 /* stackExchange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stackExchange.png; path = assets/stackExchange.png; sourceTree = "<group>"; };
+		C103AAA914E848070080A095 /* stackExchange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stackExchange@2x.png"; path = "assets/stackExchange@2x.png"; sourceTree = "<group>"; };
 		C18C323D14E7451B00691394 /* StackTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackTableViewController.h; sourceTree = "<group>"; };
 		C18C323E14E7451B00691394 /* StackTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackTableViewController.m; sourceTree = "<group>"; };
 		C1B96E8114E730B5003CF665 /* stackio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stackio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +97,8 @@
 		C103AA7914E837AC0080A095 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C103AAA814E848070080A095 /* stackExchange.png */,
+				C103AAA914E848070080A095 /* stackExchange@2x.png */,
 				C103AAA014E83FAE0080A095 /* backArrow.png */,
 				C103AAA114E83FAE0080A095 /* backArrow@2x.png */,
 				C103AAA214E83FAE0080A095 /* forwardArrow.png */,
@@ -232,6 +238,8 @@
 				C103AAA514E83FAE0080A095 /* backArrow@2x.png in Resources */,
 				C103AAA614E83FAE0080A095 /* forwardArrow.png in Resources */,
 				C103AAA714E83FAE0080A095 /* forwardArrow@2x.png in Resources */,
+				C103AAAA14E848070080A095 /* stackExchange.png in Resources */,
+				C103AAAB14E848070080A095 /* stackExchange@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
