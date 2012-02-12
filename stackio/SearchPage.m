@@ -185,4 +185,10 @@
     }
 }
 
+- (IBAction)tappedAway:(id)sender
+{
+    // User has tapped to dismiss keyboard
+    [self.searchQuery resignFirstResponder];
+}
+
 @end

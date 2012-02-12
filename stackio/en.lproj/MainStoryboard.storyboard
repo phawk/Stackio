@@ -9,7 +9,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRX-Cm-ayU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="xOd-CB-Ay9" customClass="SearchPage" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3NK-Ak-1gV">
+                    <view key="view" contentMode="scaleToFill" id="3NK-Ak-1gV" customClass="UIControl">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -49,6 +49,9 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="tappedAway:" destination="xOd-CB-Ay9" eventType="touchUpInside" id="sG3-yz-px2"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Stackio" id="BAN-bS-9UK">
                         <barButtonItem key="rightBarButtonItem" title="phawk.co.uk" id="FUv-SA-sax">
@@ -186,7 +189,7 @@
         <class className="SearchPage" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchPage.h"/>
             <relationships>
-                <relationship kind="action" name="searchButton:"/>
+                <relationship kind="action" name="tappedAway:"/>
                 <relationship kind="outlet" name="searchFormLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="searchQuery" candidateClass="UITextField"/>
             </relationships>

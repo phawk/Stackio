@@ -17,5 +17,6 @@
 
 // Methods to implement
 - (void)getQuestionsTable;
+- (IBAction)tappedAway:(id)sender;
 
 @end
