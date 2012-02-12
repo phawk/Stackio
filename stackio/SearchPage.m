@@ -178,6 +178,9 @@
                 });
             }
         });
+        
+        // Release the download queue to stop leaks
+        dispatch_release(apiCallQueue);
     }
     else
     {
