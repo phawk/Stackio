@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchPage : UIViewController
+@interface SearchPage : UIViewController <UITextFieldDelegate>
 
 // Properties to synthesize
 @property (weak, nonatomic) IBOutlet UITextField *searchQuery;

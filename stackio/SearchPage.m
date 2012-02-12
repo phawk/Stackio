@@ -15,6 +15,7 @@
 #define StackExchangeSearchEndpoint [NSURL URLWithString: @"http://api.stackexchange.com/2.0/search?order=desc&sort=activity&intitle=php&site=stackoverflow"]
 
 @implementation SearchPage
+
 @synthesize searchFormLabel = _searchFormLabel;
 @synthesize searchQuery = _searchQuery;
 @synthesize apiResults = _apiResults;
@@ -37,6 +38,11 @@
 }
 
 #pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    self.searchQuery.delegate = self;
+}
 
 - (void)viewDidUnload
 {
@@ -105,6 +111,13 @@
         
         newController.webUrlToVisit = @"http://phawk.co.uk";
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 @end
