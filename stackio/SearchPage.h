@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *searchFormLabel;
 @property (strong, nonatomic) NSArray *apiResults;
 
+- (NSString *)escape:(NSString *)text;
+
 @end

@@ -53,7 +53,7 @@
 
 - (IBAction)searchButton:(id)sender {
     // Get our search query
-    NSString *searchQueryText = self.searchQuery.text;
+    NSString *searchQueryText = [self escape:[self.searchQuery text]];
     
     // Build up our url
     NSURL *endpoint = [NSURL URLWithString: [@"http://api.stackexchange.com/2.0/search?order=desc&sort=activity&site=stackoverflow&intitle=" stringByAppendingString: searchQueryText]];
@@ -93,4 +93,13 @@
         [newController setQuestions:[self apiResults]];
     }
 }
+
+- (NSString *)escape:(NSString *)text
+{
+    return (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                        (__bridge CFStringRef)text, NULL,
+                                                                        (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                        kCFStringEncodingUTF8);
+}
+
 @end
