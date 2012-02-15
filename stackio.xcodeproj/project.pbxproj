@@ -30,8 +30,11 @@
 		C1B96E9214E730B5003CF665 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B96E9114E730B5003CF665 /* main.m */; };
 		C1B96E9614E730B5003CF665 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B96E9514E730B5003CF665 /* AppDelegate.m */; };
 		C1B96E9914E730B5003CF665 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B96E9714E730B5003CF665 /* MainStoryboard.storyboard */; };
-		C1B96EA414E7313C003CF665 /* StackNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B96EA314E7313C003CF665 /* StackNavController.m */; };
 		C1B96EA714E7320B003CF665 /* SearchPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B96EA614E7320B003CF665 /* SearchPage.m */; };
+		C1EEA3CC14EC671B0069D680 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEA3CB14EC671B0069D680 /* SignInViewController.m */; };
+		C1EEA3CF14EC6AC60069D680 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEA3CE14EC6AC50069D680 /* Security.framework */; };
+		C1EEA3D114EC6B8E0069D680 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEA3D014EC6B8E0069D680 /* SystemConfiguration.framework */; };
+		C1EEA3DB14EC75D00069D680 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEA3DA14EC75D00069D680 /* UserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,10 +68,14 @@
 		C1B96E9414E730B5003CF665 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C1B96E9514E730B5003CF665 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C1B96E9814E730B5003CF665 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C1B96EA214E7313C003CF665 /* StackNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackNavController.h; sourceTree = "<group>"; };
-		C1B96EA314E7313C003CF665 /* StackNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackNavController.m; sourceTree = "<group>"; };
 		C1B96EA514E7320B003CF665 /* SearchPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPage.h; sourceTree = "<group>"; };
 		C1B96EA614E7320B003CF665 /* SearchPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPage.m; sourceTree = "<group>"; };
+		C1EEA3CA14EC671B0069D680 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		C1EEA3CB14EC671B0069D680 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		C1EEA3CE14EC6AC50069D680 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C1EEA3D014EC6B8E0069D680 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C1EEA3D914EC75D00069D680 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		C1EEA3DA14EC75D00069D680 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EEA3D114EC6B8E0069D680 /* SystemConfiguration.framework in Frameworks */,
+				C1EEA3CF14EC6AC60069D680 /* Security.framework in Frameworks */,
 				C1B96E8614E730B5003CF665 /* UIKit.framework in Frameworks */,
 				C1B96E8814E730B5003CF665 /* Foundation.framework in Frameworks */,
 				C1B96E8A14E730B5003CF665 /* CoreGraphics.framework in Frameworks */,
@@ -135,6 +144,8 @@
 		C1B96E8414E730B5003CF665 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1EEA3D014EC6B8E0069D680 /* SystemConfiguration.framework */,
+				C1EEA3CE14EC6AC50069D680 /* Security.framework */,
 				C1B96E8514E730B5003CF665 /* UIKit.framework */,
 				C1B96E8714E730B5003CF665 /* Foundation.framework */,
 				C1B96E8914E730B5003CF665 /* CoreGraphics.framework */,
@@ -150,13 +161,15 @@
 				C1B96E9414E730B5003CF665 /* AppDelegate.h */,
 				C1B96E9514E730B5003CF665 /* AppDelegate.m */,
 				C1B96E9714E730B5003CF665 /* MainStoryboard.storyboard */,
+				C1EEA3D914EC75D00069D680 /* UserViewController.h */,
+				C1EEA3DA14EC75D00069D680 /* UserViewController.m */,
+				C1EEA3CA14EC671B0069D680 /* SignInViewController.h */,
+				C1EEA3CB14EC671B0069D680 /* SignInViewController.m */,
 				C103AA7514E814080080A095 /* WebViewController.h */,
 				C103AA7614E814080080A095 /* WebViewController.m */,
 				C1B96EA514E7320B003CF665 /* SearchPage.h */,
 				C1B96EA614E7320B003CF665 /* SearchPage.m */,
 				C1B96E8C14E730B5003CF665 /* Supporting Files */,
-				C1B96EA214E7313C003CF665 /* StackNavController.h */,
-				C1B96EA314E7313C003CF665 /* StackNavController.m */,
 				C18C323D14E7451B00691394 /* StackTableViewController.h */,
 				C18C323E14E7451B00691394 /* StackTableViewController.m */,
 			);
@@ -252,11 +265,12 @@
 			files = (
 				C1B96E9214E730B5003CF665 /* main.m in Sources */,
 				C1B96E9614E730B5003CF665 /* AppDelegate.m in Sources */,
-				C1B96EA414E7313C003CF665 /* StackNavController.m in Sources */,
 				C1B96EA714E7320B003CF665 /* SearchPage.m in Sources */,
 				C18C323F14E7451B00691394 /* StackTableViewController.m in Sources */,
 				C103AA7414E812060080A095 /* URLEncoder.m in Sources */,
 				C103AA7714E814080080A095 /* WebViewController.m in Sources */,
+				C1EEA3CC14EC671B0069D680 /* SignInViewController.m in Sources */,
+				C1EEA3DB14EC75D00069D680 /* UserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

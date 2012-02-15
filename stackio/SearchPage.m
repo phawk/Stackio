@@ -168,7 +168,7 @@
         NSString *searchQueryText = [URLEncoder urlEncodeString:[self.searchQuery text]];
         
         // Build up our url
-        NSURL *endpoint = [NSURL URLWithString: [@"http://api.stackexchange.com/2.0/search?order=desc&sort=activity&site=stackoverflow&intitle=" stringByAppendingString: searchQueryText]];
+        NSURL *endpoint = [NSURL URLWithString: [@"http://api.stackexchange.com/2.0/search?order=desc&sort=activity&key=51eAx6uDTUtYJHLxjD8oww((&site=stackoverflow&intitle=" stringByAppendingString: searchQueryText]];
         
         // Create a new dispatch queue
         dispatch_queue_t apiCallQueue = dispatch_queue_create("getQuestions", NULL);
