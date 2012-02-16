@@ -39,7 +39,10 @@
     self.userData = [defaults objectForKey:@"userData"];
     
     // Welcome the user
-    self.welcomeLabel.text = [@"Welcome " stringByAppendingString:[self.userData objectForKey:@"display_name"]];
+    NSString *user = [self.userData objectForKey:@"display_name"];
+    
+    // Set welcome text
+    if (user != nil) { self.welcomeLabel.text = [@"Welcome " stringByAppendingString:user]; }
 }
 
 
