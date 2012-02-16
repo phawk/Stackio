@@ -62,7 +62,7 @@ NSString * const oauthClientSecret = @"h)NWO*vXZGQca50PNr)SWA((";
     // Hide the loading view
     [self.loadingView removeFromSuperview];
     
-    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://stackexchange.com/oauth/dialog?client_id=112&scope=no_expiry&redirect_uri=https://stackexchange.com/oauth/login_success"]];
+    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://stackexchange.com/oauth/dialog?client_id=112&redirect_uri=https://stackexchange.com/oauth/login_success"]];
     [self.webView loadRequest:req];
 }
 
