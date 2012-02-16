@@ -11,7 +11,6 @@
 @interface UserViewController : UIViewController
 
 @property (strong, nonatomic) NSDictionary *userData;
-
-- (void)getUserDataWithAccessToken:(NSString *)accessToken;
+@property (strong, nonatomic) IBOutlet UILabel *welcomeLabel;
 
 @end

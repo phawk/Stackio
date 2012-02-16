@@ -10,6 +10,8 @@
 
 @implementation SignInViewController
 @synthesize webView = _webView;
+@synthesize loadingView = _loadingView;
+@synthesize activityIndicator = _activityIndicator;
 
 NSString * const oauthClientId = @"112";
 NSString * const oauthClientSecret = @"h)NWO*vXZGQca50PNr)SWA((";
@@ -39,13 +41,105 @@ NSString * const oauthClientSecret = @"h)NWO*vXZGQca50PNr)SWA((";
 
 - (void)checkIfLoginRequired
 {
-    [self oauthLogin];
+    // Setup activity indicator to be used on page
+    self.activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.activityIndicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview: self.activityIndicator];
+    
+    // Look up access token
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *accessToken = [defaults objectForKey:@"accessToken"];
+    
+    // Get users data
+    [self getUserDataWithAccessToken:accessToken];
 }
 
 - (void)oauthLogin
 {
-    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://stackexchange.com/oauth/dialog?client_id=112&redirect_uri=https://stackexchange.com/oauth/login_success"]];
+    [self.activityIndicator stopAnimating];
+    
+    // Hide the loading view
+    [self.loadingView removeFromSuperview];
+    
+    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://stackexchange.com/oauth/dialog?client_id=112&scope=no_expiry&redirect_uri=https://stackexchange.com/oauth/login_success"]];
     [self.webView loadRequest:req];
+}
+
+
+
+- (void)getUserDataWithAccessToken:(NSString *)accessToken
+{
+    // Check the access token is there
+    if (accessToken)
+    {
+        // Show activity indicator and network indicator
+        [self.activityIndicator startAnimating];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        // Build up our url
+        NSURL *endpoint = [NSURL URLWithString: [@"https://api.stackexchange.com/2.0/me?site=stackoverflow&key=51eAx6uDTUtYJHLxjD8oww((&access_token=" stringByAppendingString: accessToken]];
+        
+        // Create a new dispatch queue
+        dispatch_queue_t getUserData = dispatch_queue_create("getUserData", NULL);
+        
+        // Do an async call to get the results
+        dispatch_async(getUserData, ^{
+            NSData* data = [NSData dataWithContentsOfURL: endpoint];
+            
+            // Only if the data returns something usable
+            if (data != nil)
+            {
+                [self performSelectorOnMainThread:@selector(fetchedData:) 
+                                       withObject:data waitUntilDone:YES];
+            }
+            else
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    // Hide activity indicator
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                    
+                    [self oauthLogin];
+                });
+            }
+        });
+        
+        // Release the download queue to stop leaks
+        dispatch_release(getUserData);
+    }
+    else
+    {
+        // Access token is empty, we need to go to root view to login.
+        [self oauthLogin];
+    }
+}
+
+- (void)fetchedData:(NSData *)responseData
+{
+    // Hide activity indicator
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    //parse out the json data
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization 
+                          JSONObjectWithData:responseData
+                          options:kNilOptions
+                          error:&error];
+    
+    NSArray *apiResult = [json valueForKey:@"items"];
+    
+    NSDictionary *userData = [apiResult objectAtIndex:0];
+    
+    NSLog(@"got userdata: %@", userData);
+    
+    // Store userData in NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:userData forKey:@"userData"];
+    [defaults synchronize];
+    
+    // Load the main view
+    [self loadMainView];
 }
 
 
@@ -53,6 +147,7 @@ NSString * const oauthClientSecret = @"h)NWO*vXZGQca50PNr)SWA((";
 - (void)viewDidUnload
 {
     [self setWebView:nil];
+    [self setLoadingView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -144,6 +239,13 @@ NSString * const oauthClientSecret = @"h)NWO*vXZGQca50PNr)SWA((";
     [defaults synchronize];
     
     // We then can then load up the main view
+    [self loadMainView];
+}
+
+- (void)loadMainView
+{
+    [self.activityIndicator stopAnimating];
+    
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:[NSBundle mainBundle]];
     UITabBarController *tabBar = [mainStoryBoard instantiateViewControllerWithIdentifier:@"mainTabBar"];
     

@@ -63,7 +63,7 @@
 {
     [super viewWillAppear:animated];
     // Open the keyboard on view appearing.
-    [self.searchQuery becomeFirstResponder];
+    // [self.searchQuery becomeFirstResponder];
 }
 
 - (void)viewDidUnload
@@ -124,17 +124,6 @@
         
         // Set page title
         newController.title = self.searchQuery.text;
-    }
-    
-    if ([segue.identifier isEqualToString:@"visitPhawk"])
-    {
-        // It's the right segue lets pass the search query text
-        WebViewController *newController = segue.destinationViewController;
-        
-        // Lets set the pages title to be more relevant
-        newController.title = @"phawk";
-        
-        newController.webUrlToVisit = @"http://phawk.co.uk";
     }
 }
 
