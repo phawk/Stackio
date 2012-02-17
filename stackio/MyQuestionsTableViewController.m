@@ -148,6 +148,8 @@
         // It's the right segue lets pass the search query text
         WebViewController *newController = segue.destinationViewController;
         
+        newController.hidesBottomBarWhenPushed = YES;
+        
         // Lets set the pages title to be more relevant
         newController.title = cell.textLabel.text;
         

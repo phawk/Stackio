@@ -60,4 +60,17 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)logoutButton:(id)sender
+{
+    // Remove saved data
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"userData"];
+    [defaults removeObjectForKey:@"accessToken"];
+    
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:[NSBundle mainBundle]];
+    UIViewController *loginView = [mainStoryBoard instantiateViewControllerWithIdentifier:@"loginScreen"];
+    
+    // Push the loaded up view to the screen
+    [self presentViewController:loginView animated:YES completion:^{}];
+}
 @end

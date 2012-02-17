@@ -13,4 +13,6 @@
 @property (strong, nonatomic) NSDictionary *userData;
 @property (strong, nonatomic) IBOutlet UILabel *welcomeLabel;
 
+- (IBAction)logoutButton:(id)sender;
+
 @end
