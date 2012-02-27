@@ -22,6 +22,10 @@
 		C103AAA714E83FAE0080A095 /* forwardArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA314E83FAE0080A095 /* forwardArrow@2x.png */; };
 		C103AAAA14E848070080A095 /* stackExchange.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA814E848070080A095 /* stackExchange.png */; };
 		C103AAAB14E848070080A095 /* stackExchange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C103AAA914E848070080A095 /* stackExchange@2x.png */; };
+		C16BF02814FBE5A900A638F9 /* questions-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C16BF02414FBE5A900A638F9 /* questions-icon.png */; };
+		C16BF02914FBE5A900A638F9 /* questions-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16BF02514FBE5A900A638F9 /* questions-icon@2x.png */; };
+		C16BF02A14FBE5A900A638F9 /* search-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C16BF02614FBE5A900A638F9 /* search-icon.png */; };
+		C16BF02B14FBE5A900A638F9 /* search-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16BF02714FBE5A900A638F9 /* search-icon@2x.png */; };
 		C16FC47814ED773E0073BC57 /* MyQuestionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16FC47714ED773E0073BC57 /* MyQuestionsTableViewController.m */; };
 		C18C323F14E7451B00691394 /* StackTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C323E14E7451B00691394 /* StackTableViewController.m */; };
 		C1B96E8614E730B5003CF665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8514E730B5003CF665 /* UIKit.framework */; };
@@ -35,7 +39,6 @@
 		C1EEA3CC14EC671B0069D680 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEA3CB14EC671B0069D680 /* SignInViewController.m */; };
 		C1EEA3CF14EC6AC60069D680 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEA3CE14EC6AC50069D680 /* Security.framework */; };
 		C1EEA3D114EC6B8E0069D680 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EEA3D014EC6B8E0069D680 /* SystemConfiguration.framework */; };
-		C1EEA3DB14EC75D00069D680 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEA3DA14EC75D00069D680 /* UserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,10 @@
 		C103AAA314E83FAE0080A095 /* forwardArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "forwardArrow@2x.png"; path = "assets/forwardArrow@2x.png"; sourceTree = "<group>"; };
 		C103AAA814E848070080A095 /* stackExchange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stackExchange.png; path = assets/stackExchange.png; sourceTree = "<group>"; };
 		C103AAA914E848070080A095 /* stackExchange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stackExchange@2x.png"; path = "assets/stackExchange@2x.png"; sourceTree = "<group>"; };
+		C16BF02414FBE5A900A638F9 /* questions-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "questions-icon.png"; path = "assets/questions-icon.png"; sourceTree = "<group>"; };
+		C16BF02514FBE5A900A638F9 /* questions-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "questions-icon@2x.png"; path = "assets/questions-icon@2x.png"; sourceTree = "<group>"; };
+		C16BF02614FBE5A900A638F9 /* search-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search-icon.png"; path = "assets/search-icon.png"; sourceTree = "<group>"; };
+		C16BF02714FBE5A900A638F9 /* search-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search-icon@2x.png"; path = "assets/search-icon@2x.png"; sourceTree = "<group>"; };
 		C16FC47614ED773E0073BC57 /* MyQuestionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyQuestionsTableViewController.h; sourceTree = "<group>"; };
 		C16FC47714ED773E0073BC57 /* MyQuestionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyQuestionsTableViewController.m; sourceTree = "<group>"; };
 		C18C323D14E7451B00691394 /* StackTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackTableViewController.h; sourceTree = "<group>"; };
@@ -77,8 +84,6 @@
 		C1EEA3CB14EC671B0069D680 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		C1EEA3CE14EC6AC50069D680 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C1EEA3D014EC6B8E0069D680 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C1EEA3D914EC75D00069D680 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
-		C1EEA3DA14EC75D00069D680 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,10 @@
 		C103AA7914E837AC0080A095 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C16BF02414FBE5A900A638F9 /* questions-icon.png */,
+				C16BF02514FBE5A900A638F9 /* questions-icon@2x.png */,
+				C16BF02614FBE5A900A638F9 /* search-icon.png */,
+				C16BF02714FBE5A900A638F9 /* search-icon@2x.png */,
 				C103AAA814E848070080A095 /* stackExchange.png */,
 				C103AAA914E848070080A095 /* stackExchange@2x.png */,
 				C103AAA014E83FAE0080A095 /* backArrow.png */,
@@ -166,8 +175,6 @@
 				C1B96E9714E730B5003CF665 /* MainStoryboard.storyboard */,
 				C16FC47614ED773E0073BC57 /* MyQuestionsTableViewController.h */,
 				C16FC47714ED773E0073BC57 /* MyQuestionsTableViewController.m */,
-				C1EEA3D914EC75D00069D680 /* UserViewController.h */,
-				C1EEA3DA14EC75D00069D680 /* UserViewController.m */,
 				C1EEA3CA14EC671B0069D680 /* SignInViewController.h */,
 				C1EEA3CB14EC671B0069D680 /* SignInViewController.m */,
 				C103AA7514E814080080A095 /* WebViewController.h */,
@@ -258,6 +265,10 @@
 				C103AAA714E83FAE0080A095 /* forwardArrow@2x.png in Resources */,
 				C103AAAA14E848070080A095 /* stackExchange.png in Resources */,
 				C103AAAB14E848070080A095 /* stackExchange@2x.png in Resources */,
+				C16BF02814FBE5A900A638F9 /* questions-icon.png in Resources */,
+				C16BF02914FBE5A900A638F9 /* questions-icon@2x.png in Resources */,
+				C16BF02A14FBE5A900A638F9 /* search-icon.png in Resources */,
+				C16BF02B14FBE5A900A638F9 /* search-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +286,6 @@
 				C103AA7414E812060080A095 /* URLEncoder.m in Sources */,
 				C103AA7714E814080080A095 /* WebViewController.m in Sources */,
 				C1EEA3CC14EC671B0069D680 /* SignInViewController.m in Sources */,
-				C1EEA3DB14EC75D00069D680 /* UserViewController.m in Sources */,
 				C16FC47814ED773E0073BC57 /* MyQuestionsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

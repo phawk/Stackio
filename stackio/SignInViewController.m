@@ -36,23 +36,7 @@ NSString * const oauthClientSecret = @"h)NWO*vXZGQca50PNr)SWA((";
 {
     [super viewWillAppear:animated];
     
-    [self checkIfLoginRequired];
-}
-
-- (void)checkIfLoginRequired
-{
-    // Setup activity indicator to be used on page
-    self.activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.activityIndicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
-    self.activityIndicator.center = self.view.center;
-    [self.view addSubview: self.activityIndicator];
-    
-    // Look up access token
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *accessToken = [defaults objectForKey:@"accessToken"];
-    
-    // Get users data
-    [self getUserDataWithAccessToken:accessToken];
+    [self oauthLogin];
 }
 
 - (void)oauthLogin
@@ -239,7 +223,7 @@ NSString * const oauthClientSecret = @"h)NWO*vXZGQca50PNr)SWA((";
     [defaults synchronize];
     
     // We then can then load up the main view
-    [self loadMainView];
+    [self getUserDataWithAccessToken:accessToken];
 }
 
 - (void)loadMainView

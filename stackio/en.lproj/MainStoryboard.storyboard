@@ -156,13 +156,13 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="723" y="-68"/>
+            <point key="canvasLocation" x="963" y="322"/>
         </scene>
         <scene sceneID="DAQ-MR-h2e">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwa-lB-6Ps" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="3WB-H2-SA2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="VLB-I3-Vw0"/>
+                    <tabBarItem key="tabBarItem" title="Find help" image="search-icon.png" id="VLB-I3-Vw0"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="r5S-ug-j96">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -188,7 +188,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Iym-fj-5I1">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <rect key="frame" x="1" y="415" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem image="backArrow.png" id="SNP-xP-pfV">
@@ -237,44 +237,11 @@
                     </tabBar>
                     <connections>
                         <segue destination="3WB-H2-SA2" kind="relationship" relationship="viewControllers" id="lwy-Sa-2jo"/>
-                        <segue destination="70d-sn-NpJ" kind="relationship" relationship="viewControllers" id="CJz-wl-TsG"/>
                         <segue destination="yb5-WR-39L" kind="relationship" relationship="viewControllers" id="XZH-Vy-DGr"/>
                     </connections>
                 </tabBarController>
             </objects>
             <point key="canvasLocation" x="-916" y="-68"/>
-        </scene>
-        <scene sceneID="H62-ds-Ehc">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wxk-b8-juI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="CNy-o2-4TQ" customClass="UserViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MP3-7I-EdV">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="kle-9R-yn4">
-                                <rect key="frame" x="20" y="20" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Account" id="yth-uT-Y5H">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="WnA-cB-dIU">
-                            <connections>
-                                <action selector="logoutButton:" destination="CNy-o2-4TQ" id="02X-Dc-mwh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="welcomeLabel" destination="kle-9R-yn4" id="pFR-04-LqN"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="-80" y="559"/>
         </scene>
         <scene sceneID="J8N-zU-tT0">
             <objects>
@@ -323,31 +290,13 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-80" y="1208"/>
-        </scene>
-        <scene sceneID="iXd-Eo-a3O">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sFG-hD-iNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="70d-sn-NpJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" id="fr2-bI-OKQ"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="7Kf-4V-i6n">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="CNy-o2-4TQ" kind="relationship" relationship="rootViewController" id="UGL-79-YeB"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="-482" y="559"/>
+            <point key="canvasLocation" x="-80" y="602"/>
         </scene>
         <scene sceneID="Xss-xV-3Ph">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m0v-zQ-24Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="yb5-WR-39L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Questions" id="CRT-Xv-42N"/>
+                    <tabBarItem key="tabBarItem" title="My Questions" image="questions-icon.png" id="CRT-Xv-42N"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9w2-cm-Hyu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -360,13 +309,15 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-482" y="1208"/>
+            <point key="canvasLocation" x="-482" y="602"/>
         </scene>
     </scenes>
     <resources>
         <image name="backArrow.png" width="20" height="20"/>
         <image name="forwardArrow.png" width="20" height="20"/>
         <image name="mainbg.png" width="320" height="480"/>
+        <image name="questions-icon.png" width="30" height="30"/>
+        <image name="search-icon.png" width="30" height="30"/>
         <image name="stackExchange.png" width="320" height="80"/>
     </resources>
     <classes>
@@ -398,13 +349,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StackTableViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="resultsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="logoutButton:"/>
-                <relationship kind="outlet" name="welcomeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="WebViewController" superclassName="UIViewController">
