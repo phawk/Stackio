@@ -134,12 +134,12 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    [self performSegueWithIdentifier:@"openWebMyQuest" sender:cell];
+    [self performSegueWithIdentifier:@"openMyQuestionViewController" sender:cell];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"openWebMyQuest"])
+    if ([segue.identifier isEqualToString:@"openMyQuestionViewController"])
     {
         // Get the URL to visit from the cell (sender)
         UITableViewCell *cell = sender;
@@ -219,7 +219,7 @@
                           JSONObjectWithData:responseData
                           options:kNilOptions
                           error:&error];
-    
+    NSLog(@"got data: %@", json);
     self.myQuestions = [json valueForKey:@"items"];
     
     // Success, reload the table view

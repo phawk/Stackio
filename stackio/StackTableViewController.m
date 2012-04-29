@@ -12,7 +12,8 @@
 @implementation StackTableViewController
 @synthesize resultsTable = _resultsTable;
 @synthesize searchString = _searchString;
-@synthesize questions = _questions;
+@synthesize searchModel = _searchModel;
+@synthesize goToQuestion = _goToQuestion;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,13 +47,23 @@
 {
     [super viewWillAppear:animated];
     
-    // Log the model: NSLog(@"Questions: %@", self.questions);
+    // Bind a wee observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(questionCameBackWithData:) name:@"questionDataReturned" object:nil];
+    
+    // Instantiate question model
+    self.goToQuestion = [[QuestionModel alloc] init];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    // Remove the observer
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"questionDataReturned" object:nil];
 }
 
 - (NSDictionary *)getDataForRowAtIndex:(NSInteger)rowNumber
 {
-    NSDictionary *question = [self.questions objectAtIndex:rowNumber];
-    return question;
+    QuestionModel *question = [self.searchModel getQuestionAtRow:rowNumber];
+    return question.question;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -72,7 +83,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.questions count];
+    return [self.searchModel countQuestions];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,28 +107,59 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    // Show network indicator
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    [self performSegueWithIdentifier:@"openWebView" sender:cell];
+    // UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSDictionary *question = [self getDataForRowAtIndex:indexPath.row];
+    
+    NSNumber *id = [question objectForKey:@"question_id"];
+    
+    NSLog(@"Question selected %@", id);
+    
+    // Ask question model to go get a new question
+    [self.goToQuestion getQuestion:[id stringValue]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"openWebView"])
+    if ([segue.identifier isEqualToString:@"openQuestionViewController"])
     {
         // Get the URL to visit from the cell (sender)
-        UITableViewCell *cell = sender;
-        NSString *url = cell.detailTextLabel.text;
         
         // It's the right segue lets pass the search query text
-        WebViewController *newController = segue.destinationViewController;
+        ActualQuestionTableViewController *newController = segue.destinationViewController;
         
         newController.hidesBottomBarWhenPushed = YES;
         
-        // Lets set the pages title to be more relevant
-        newController.title = cell.textLabel.text;
+        NSDictionary *qDict = self.goToQuestion.question;
         
-        newController.webUrlToVisit = url;
+        NSLog(@"DICT: %@", qDict);
+        
+        // Lets set the pages title to be more relevant
+        newController.title = [qDict objectForKey:@"title"];
+        
+        newController.question = self.goToQuestion;
+    }
+}
+
+- (void)questionCameBackWithData:(NSNotification *) notification
+{
+    // Hide network indicator
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    if ([self.goToQuestion populated])
+    {
+        [self performSegueWithIdentifier:@"openQuestionViewController" sender:self.goToQuestion];
+    }
+    else
+    {
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Nightmare." 
+                                                          message:@"We couldn't load your question." 
+                                                         delegate:nil
+                                                cancelButtonTitle:@":/ Okay.."
+                                                otherButtonTitles:nil];
+        [message show];
     }
 }
 

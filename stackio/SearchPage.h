@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchModel.h"
 
 @interface SearchPage : UIViewController <UITextFieldDelegate>
 
@@ -15,9 +16,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *searchFormLabel;
 @property (strong, nonatomic) NSArray *apiResults;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) SearchModel *searchModel;
 
 // Methods to implement
 - (void)getQuestionsTable;
+- (void)searchCameBackWithResults:(NSNotification *) notification;
 - (IBAction)tappedAway:(id)sender;
 
 @end

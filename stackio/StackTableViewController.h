@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchModel.h"
+#import "QuestionModel.h"
+#import "ActualQuestionTableViewController.h"
 
 @interface StackTableViewController : UITableViewController
 
 // Properties to synthesize
 @property (strong, nonatomic) IBOutlet UITableView *resultsTable;
 @property(nonatomic, strong) NSString *searchString;
-@property(nonatomic, strong) NSArray *questions;
+@property(nonatomic, strong) SearchModel *searchModel;
+@property(nonatomic, strong) QuestionModel *goToQuestion;
+
+- (void)questionCameBackWithData:(NSNotification *) notification;
 
 @end

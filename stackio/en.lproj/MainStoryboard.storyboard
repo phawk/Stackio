@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="h88-dI-Bhg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="h88-dI-Bhg">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Search Page - Stackio-->
         <scene sceneID="gm3-IU-q2I">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRX-Cm-ayU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -63,6 +65,7 @@
             </objects>
             <point key="canvasLocation" x="-80" y="-68"/>
         </scene>
+        <!--Stack Table View Controller - Questions-->
         <scene sceneID="rfr-M6-PbA">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgz-SZ-3dB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,11 +110,13 @@
                     <connections>
                         <outlet property="resultsTable" destination="BBF-pv-FEn" id="xGg-aE-Q1A"/>
                         <segue destination="4Sd-km-8g5" kind="push" identifier="openWebView" id="BVg-85-HKE"/>
+                        <segue destination="ekj-Tb-NUx" kind="push" identifier="openQuestionViewController" id="fOg-U2-b6N"/>
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="317" y="-68"/>
+            <point key="canvasLocation" x="383" y="-74"/>
         </scene>
+        <!--Web View Controller - Web browser-->
         <scene sceneID="GGM-yK-d3K">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dC-gw-P4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,8 +161,9 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="963" y="322"/>
+            <point key="canvasLocation" x="989" y="-68"/>
         </scene>
+        <!--Navigation Controller - Find help-->
         <scene sceneID="DAQ-MR-h2e">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwa-lB-6Ps" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,6 +180,7 @@
             </objects>
             <point key="canvasLocation" x="-482" y="-68"/>
         </scene>
+        <!--Sign In View Controller-->
         <scene sceneID="bCy-5c-YFr">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGh-DX-31I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -225,6 +232,7 @@
             </objects>
             <point key="canvasLocation" x="-1375" y="-68"/>
         </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="zsu-Q4-YEC">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hae-e4-XnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,6 +251,7 @@
             </objects>
             <point key="canvasLocation" x="-916" y="-68"/>
         </scene>
+        <!--My Questions Table View Controller - My Questions-->
         <scene sceneID="J8N-zU-tT0">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obz-zQ-RSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -287,11 +296,43 @@
                     <connections>
                         <outlet property="tableView" destination="bfY-xp-Oit" id="p8A-bO-5qF"/>
                         <segue destination="4Sd-km-8g5" kind="push" identifier="openWebMyQuest" id="vUb-eY-Bzb"/>
+                        <segue destination="ekj-Tb-NUx" kind="push" identifier="openMyQuestionViewController" id="Brd-CO-H3d"/>
                     </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="-80" y="602"/>
         </scene>
+        <!--Actual Question Table View Controller-->
+        <scene sceneID="z8b-hD-jhh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ou4-Gg-o4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="ekj-Tb-NUx" customClass="ActualQuestionTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Pfm-DB-s4e">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sAx-0e-HUd">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ekj-Tb-NUx" id="6KZ-VI-jMR"/>
+                            <outlet property="delegate" destination="ekj-Tb-NUx" id="g94-tR-dU1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Fqw-IE-N3e"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1179" y="675"/>
+        </scene>
+        <!--Navigation Controller - My Questions-->
         <scene sceneID="Xss-xV-3Ph">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m0v-zQ-24Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -321,6 +362,9 @@
         <image name="stackExchange.png" width="320" height="80"/>
     </resources>
     <classes>
+        <class className="ActualQuestionTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActualQuestionTableViewController.h"/>
+        </class>
         <class className="MyQuestionsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyQuestionsTableViewController.h"/>
             <relationships>
@@ -367,6 +411,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Brd-CO-H3d"/>
         <segue reference="vUb-eY-Bzb"/>
     </inferredMetricsTieBreakers>
 </document>

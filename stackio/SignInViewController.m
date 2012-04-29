@@ -9,6 +9,7 @@
 #import "SignInViewController.h"
 
 @implementation SignInViewController
+
 @synthesize webView = _webView;
 @synthesize loadingView = _loadingView;
 @synthesize activityIndicator = _activityIndicator;
@@ -235,6 +236,11 @@ NSString * const oauthClientSecret = @"h)NWO*vXZGQca50PNr)SWA((";
     
     // Push the loaded up view to the screen
     [self presentViewController:tabBar animated:YES completion:^{}];
+}
+
+- (void)checkIfLoginRequired;
+{
+    
 }
 
 @end
