@@ -15,7 +15,7 @@
 		<string>icon114.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.peteyhawkins..${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.peteyhawkins.stackio</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -30,8 +30,12 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UILaunchImageFile</key>
+	<string>mainbg.png</string>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -42,9 +46,5 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>UIPrerenderedIcon</key>
-	<true/>
-	<key>UILaunchImageFile</key>
-	<string>mainbg.png</string>
 </dict>
 </plist>

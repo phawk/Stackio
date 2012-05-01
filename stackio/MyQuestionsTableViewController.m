@@ -13,6 +13,7 @@
 
 @synthesize myQuestions = _myQuestions;
 @synthesize tableView = _tableView;
+@synthesize goToQuestion = _goToQuestion;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -70,9 +71,11 @@
     // Get questions from API
     [self getUsersQuestionsWithID:userId];
     
+    // Instantiate question model
+    self.goToQuestion = [[QuestionModel alloc] init];
     
-    // URL to query https://api.stackexchange.com/2.0/users/1212173/questions?site=stackoverflow&key=51eAx6uDTUtYJHLxjD8oww((&access_token=8Q*fe1o7NYQRo6La7We81g))
-    
+    // Bind a wee observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(questionCameBackWithData:) name:@"questionDataReturned" object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -83,6 +86,9 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    // Remove the observer
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"questionDataReturned" object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -132,28 +138,37 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    // Show network indicator
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    [self performSegueWithIdentifier:@"openMyQuestionViewController" sender:cell];
+    // UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSDictionary *question = [self.myQuestions objectAtIndex:indexPath.row];
+    
+    NSNumber *id = [question objectForKey:@"question_id"];
+    
+    NSLog(@"Question selected %@", id);
+    
+    // Ask question model to go get a new question
+    [self.goToQuestion getQuestion:[id stringValue]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"openMyQuestionViewController"])
     {
-        // Get the URL to visit from the cell (sender)
-        UITableViewCell *cell = sender;
-        NSString *url = cell.detailTextLabel.text;
-        
         // It's the right segue lets pass the search query text
-        WebViewController *newController = segue.destinationViewController;
+        ActualQuestionTableViewController *newController = segue.destinationViewController;
         
         newController.hidesBottomBarWhenPushed = YES;
         
-        // Lets set the pages title to be more relevant
-        newController.title = cell.textLabel.text;
+        NSDictionary *qDict = self.goToQuestion.question;
         
-        newController.webUrlToVisit = url;
+        NSLog(@"DICT: %@", qDict);
+        
+        // Lets set the pages title to be more relevant
+        newController.title = [qDict objectForKey:@"title"];
+        
+        newController.question = self.goToQuestion;
     }
 }
 
@@ -224,6 +239,26 @@
     
     // Success, reload the table view
     [self.tableView reloadData];
+}
+
+- (void)questionCameBackWithData:(NSNotification *) notification
+{
+    // Hide network indicator
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    if ([self.goToQuestion populated])
+    {
+        [self performSegueWithIdentifier:@"openMyQuestionViewController" sender:self.goToQuestion];
+    }
+    else
+    {
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Nightmare." 
+                                                          message:@"We couldn't load your question." 
+                                                         delegate:nil
+                                                cancelButtonTitle:@":/ Okay.."
+                                                otherButtonTitles:nil];
+        [message show];
+    }
 }
 
 @end

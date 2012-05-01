@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuestionModel.h"
+#import "ActualQuestionTableViewController.h"
 
 @interface MyQuestionsTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *myQuestions;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) QuestionModel *goToQuestion;
 
 - (void)getUsersQuestionsWithID:(NSNumber *)usersId;
 - (void)fetchedData:(NSData *)responseData;
+
+- (void)questionCameBackWithData:(NSNotification *) notification;
 
 @end

@@ -22,4 +22,9 @@
 - (void)returnedData:(NSData *)responseData;
 - (BOOL)populated;
 
+
+- (NSDictionary *)getDataForRow:(int)row;
+- (NSArray *)getCommentWithIndex:(int)index;
+- (int)commentsCount;
+
 @end
