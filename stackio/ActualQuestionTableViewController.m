@@ -75,35 +75,48 @@
                               CGRectMake(10, 10, cell.bounds.size.width - 20, cell.bounds.size.height - 20)];
         //webView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         webView.tag = 1001;
-        webView.userInteractionEnabled = NO;
-        webView.backgroundColor = [UIColor blackColor];
-        webView.opaque = NO;
 
-        [cell addSubview:webView];
+        [[cell contentView] addSubview:webView];
     }
     
     // Get the web view by tag
     UIWebView* webView = (UIWebView*)[cell viewWithTag:1001];
+    
     webView.delegate = self;
+    
+    // Set properties on the web view
+    webView.userInteractionEnabled = NO;
+    webView.backgroundColor = [UIColor clearColor];
+    webView.opaque = NO;
+    webView.scrollView.scrollEnabled = NO; 
+    webView.scrollView.bounces = NO;
     
     // Get data for the cell
     NSDictionary *data = [self.question getDataWithIndex:indexPath];
     
     // Get our htmls
-    NSString *titleHtml = [data objectForKey:@"title"];
-    if (titleHtml == nil) {
-        titleHtml = @"[No Title]";
+    NSString *title;
+    
+    // Put the title in if its the main question
+    if (indexPath.section == 0)
+    {
+        NSString *titleHtml = [data objectForKey:@"title"];
+        if (titleHtml == nil) {
+            titleHtml = @"[No Title]";
+        }
+        title = [NSString stringWithFormat:@"<h1 class=\"main-title\">%@</h1>", titleHtml];
+    }
+    else
+    {
+        title = @"";
     }
     
     NSString *bodyHtml = [data objectForKey:@"body"];
     if (bodyHtml == nil) {
         bodyHtml = @"No content.";
     }
-    
-    // Build up our html string
-    NSString *title = [NSString stringWithFormat:@"<h1>%@</h1>", titleHtml];
-    NSString *body = [title stringByAppendingString:bodyHtml];
-    NSString *html = [NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" href=\"web_styles.css\" /></head><body>%@</body></html>", body];
+
+    NSString *html = [NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" href=\"web_styles.css\" /></head><body>%@<section class=\"main-body\">%@</section></body></html>", title, bodyHtml];
     
     // Tell our web view to load the string
     NSString *path = [[NSBundle mainBundle] bundlePath];
