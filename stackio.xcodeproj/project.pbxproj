@@ -29,6 +29,7 @@
 		C16BF02914FBE5A900A638F9 /* questions-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16BF02514FBE5A900A638F9 /* questions-icon@2x.png */; };
 		C16BF02A14FBE5A900A638F9 /* search-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C16BF02614FBE5A900A638F9 /* search-icon.png */; };
 		C16BF02B14FBE5A900A638F9 /* search-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16BF02714FBE5A900A638F9 /* search-icon@2x.png */; };
+		C16DFFCC155C600200344C50 /* web_styles.css in Resources */ = {isa = PBXBuildFile; fileRef = C16DFFCB155C600200344C50 /* web_styles.css */; };
 		C16FC47814ED773E0073BC57 /* MyQuestionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16FC47714ED773E0073BC57 /* MyQuestionsTableViewController.m */; };
 		C18C323F14E7451B00691394 /* StackTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C323E14E7451B00691394 /* StackTableViewController.m */; };
 		C1B96E8614E730B5003CF665 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B96E8514E730B5003CF665 /* UIKit.framework */; };
@@ -72,6 +73,7 @@
 		C16BF02514FBE5A900A638F9 /* questions-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "questions-icon@2x.png"; path = "assets/questions-icon@2x.png"; sourceTree = "<group>"; };
 		C16BF02614FBE5A900A638F9 /* search-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search-icon.png"; path = "assets/search-icon.png"; sourceTree = "<group>"; };
 		C16BF02714FBE5A900A638F9 /* search-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search-icon@2x.png"; path = "assets/search-icon@2x.png"; sourceTree = "<group>"; };
+		C16DFFCB155C600200344C50 /* web_styles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = web_styles.css; sourceTree = "<group>"; };
 		C16FC47614ED773E0073BC57 /* MyQuestionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyQuestionsTableViewController.h; sourceTree = "<group>"; };
 		C16FC47714ED773E0073BC57 /* MyQuestionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyQuestionsTableViewController.m; sourceTree = "<group>"; };
 		C18C323D14E7451B00691394 /* StackTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackTableViewController.h; sourceTree = "<group>"; };
@@ -183,6 +185,14 @@
 			name = controllers;
 			sourceTree = "<group>";
 		};
+		C16DFFCA155C5FEA00344C50 /* CSS */ = {
+			isa = PBXGroup;
+			children = (
+				C16DFFCB155C600200344C50 /* web_styles.css */,
+			);
+			name = CSS;
+			sourceTree = "<group>";
+		};
 		C1B96E7614E730B5003CF665 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 		C1B96E8B14E730B5003CF665 /* stackio */ = {
 			isa = PBXGroup;
 			children = (
+				C16DFFCA155C5FEA00344C50 /* CSS */,
 				C1513E44154C5F460053DD3E /* controllers */,
 				C1513E43154C5F3C0053DD3E /* UI */,
 				C1513E42154C5F260053DD3E /* Models */,
@@ -308,6 +319,7 @@
 				C16BF02914FBE5A900A638F9 /* questions-icon@2x.png in Resources */,
 				C16BF02A14FBE5A900A638F9 /* search-icon.png in Resources */,
 				C16BF02B14FBE5A900A638F9 /* search-icon@2x.png in Resources */,
+				C16DFFCC155C600200344C50 /* web_styles.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

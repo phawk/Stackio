@@ -102,10 +102,13 @@
     
     // Build up our html string
     NSString *title = [NSString stringWithFormat:@"<h1>%@</h1>", titleHtml];
-    NSString *html = [title stringByAppendingString:bodyHtml];
+    NSString *body = [title stringByAppendingString:bodyHtml];
+    NSString *html = [NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" href=\"web_styles.css\" /></head><body>%@</body></html>", body];
     
     // Tell our web view to load the string
-    [webView loadHTMLString:html baseURL:nil];
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSURL *baseURL = [NSURL fileURLWithPath:path];
+    [webView loadHTMLString:html baseURL:baseURL];
     
     return cell;
 }
