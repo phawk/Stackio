@@ -52,68 +52,63 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    // One section for the question, another for the answers
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return section == 2 ? [self.question getAnswerCount] : 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"webViewCell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        UIWebView* webView = [[UIWebView alloc] initWithFrame:
+                              CGRectMake(10, 10, cell.bounds.size.width - 20, cell.bounds.size.height - 20)];
+        //webView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        webView.tag = 1001;
+        webView.userInteractionEnabled = NO;
+        webView.backgroundColor = [UIColor blackColor];
+        webView.opaque = NO;
+
+        [cell addSubview:webView];
+    }
+    
+    // Get the web view by tag
+    UIWebView* webView = (UIWebView*)[cell viewWithTag:1001];
+    webView.delegate = self;
+    
+    // Get data for the cell
+    NSDictionary *data = [self.question getDataWithIndex:indexPath];
+    
+    // Get our htmls
+    NSString *titleHtml = [data objectForKey:@"title"];
+    if (titleHtml == nil) {
+        titleHtml = @"[No Title]";
+    }
+    
+    NSString *bodyHtml = [data objectForKey:@"body"];
+    if (bodyHtml == nil) {
+        bodyHtml = @"No content.";
+    }
+    
+    // Build up our html string
+    NSString *title = [NSString stringWithFormat:@"<h1>%@</h1>", titleHtml];
+    NSString *html = [title stringByAppendingString:bodyHtml];
+    
+    // Tell our web view to load the string
+    [webView loadHTMLString:html baseURL:nil];
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

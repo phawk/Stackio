@@ -23,8 +23,9 @@
 - (BOOL)populated;
 
 
-- (NSDictionary *)getDataForRow:(int)row;
-- (NSArray *)getCommentWithIndex:(int)index;
+- (int)getAnswerCount;
+
+- (NSDictionary *)getDataWithIndex:(NSIndexPath *)indexPath;
 - (int)commentsCount;
 
 @end

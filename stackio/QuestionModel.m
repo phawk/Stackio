@@ -98,4 +98,26 @@
     });
 }
 
+- (int)getAnswerCount
+{
+    NSArray *answers = [self.question objectForKey:@"answers"];
+    return [answers count];
+}
+
+- (NSDictionary *)getDataWithIndex:(NSIndexPath *)indexPath
+{
+    NSDictionary *data;
+    if (indexPath.section == 0)
+    {
+        // Return the question
+        data = self.question;
+    }
+    else {
+        NSArray *answers = [self.question objectForKey:@"answers"];
+        data = [answers objectAtIndex:indexPath.row];
+    }
+    
+    return data;
+}
+
 @end

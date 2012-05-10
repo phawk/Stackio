@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "QuestionModel.h"
 
-@interface ActualQuestionTableViewController : UITableViewController
+@interface ActualQuestionTableViewController : UITableViewController <UIWebViewDelegate>
 
 @property (strong, nonatomic) QuestionModel *question;
 
